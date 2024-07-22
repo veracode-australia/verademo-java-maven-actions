@@ -10,9 +10,7 @@ jobs:
     steps:
     - name: display github event
       run: |
-        event_json = toJSON(github.event)
-        echo "Event in JSON format:"
-        echo $event_json
+        echo "${{ toJson(github.event) }}"
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
