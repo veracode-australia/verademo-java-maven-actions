@@ -47,7 +47,7 @@ jobs:
         uses: veracode/uploadandscan-action@main
         id: upload_and_scan
         with:
-          appname: ${{ github.evet.repository.full_name }}
+          appname: ${{ github.event.repository.full_name }}
           createprofile: true
           policy: 'Verademo Policy'
           version: '${{ github.run_id }}'
