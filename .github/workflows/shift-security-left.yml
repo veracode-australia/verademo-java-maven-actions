@@ -63,3 +63,14 @@ jobs:
           file: ./veracode-artifact/${{ env.veracode_artifact }}
           fail_build: true
           veracode_policy_name: ${{ steps.get_policy_name.outputs.policy_name }}
+
+      - name: Veracode Pipeline Results
+        if: always()
+        id: prepare-results
+        uses: veracode/workflow-app-helper@allow-for-non-workflow-app
+        with:
+          action: 'preparePipelineResults'
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
+          appname: ${{ github.event.repository.full_name }}
+          workflow_app: false
