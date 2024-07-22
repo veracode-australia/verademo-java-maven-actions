@@ -74,4 +74,4 @@ jobs:
           vkey: ${{ secrets.VERACODE_API_KEY }}
           appname: ${{ github.event.repository.full_name }}
           workflow_app: false
-          filter_mitigated_flaws: true
+          filter_mitigated_flaws: false
