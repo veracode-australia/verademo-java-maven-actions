@@ -75,3 +75,4 @@ jobs:
           appname: ${{ github.event.repository.full_name }}
           workflow_app: false
           filter_mitigated_flaws: false
+          fail_checks_on_policy: true
